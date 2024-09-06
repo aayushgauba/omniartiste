@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omni Artiste</title>
+    <title>Contact Omni Artiste</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
@@ -91,8 +91,9 @@
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             padding: 40px;
-            max-width: 800px;
-            text-align: center;
+            width: 80%; /* Increased width */
+            max-width: 1200px; /* Increased max-width */
+            text-align: left;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
@@ -100,12 +101,13 @@
             color: #000;
             font-size: 2em;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         p {
             color: #333;
             line-height: 1.6;
-            text-align: left;
+            margin-bottom: 15px;
         }
 
         .tribal-decoration {
@@ -117,21 +119,66 @@
             margin: 20px 0;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: #000;
-            color: #D4AF37;
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: all 0.3s ease;
+        .contact-info {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
         }
 
-        .cta-button:hover {
-            background-color: #D4AF37;
-            color: #000;
+        .contact-form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #000;
+            color: #D4AF37;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #333;
+        }
+
+        /* New styles for wider layout */
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .contact-info,
+        .contact-form-container {
+            flex-basis: 48%;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .contact-info,
+            .contact-form-container {
+                flex-basis: 100%;
+            }
         }
     </style>
 </head>
@@ -149,10 +196,34 @@
         </nav>
         <main>
             <div class="content">
-                <h2>Our Mission</h2>
+                <h2>Contact Us</h2>
                 <div class="tribal-decoration"></div>
-                <p>Omni Artiste', Inc Productions is dedicated to and propagated by the aspirations and culture of African Americans. Our productions enhance the cultural and artistic awareness in Southwest Louisiana and beyond by producing quality experiences that illuminate the African American experience and culture.</p>
-                <p>Our Black play and screenwriter's initiative provide a continuum of scripts that will increase and strengthen the pool of play and screenwriters.</p>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Our Location</h3>
+                        <p>1553 Verot School Road, Suite C<br>Lafayette, LA 70508</p>
+                        <h3>Phone</h3>
+                        <p>(337) 735-7851</p>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h3>Send us a message</h3>
+                        <form class="contact-form" method = "post">
+                            {%csrf_token%}
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
