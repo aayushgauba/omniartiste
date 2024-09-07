@@ -7,16 +7,23 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://omniartiste.org/</loc>
-  <lastmod>2024-09-06T03:35:42+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://omniartiste.org/</loc>
+<lastmod>2024-09-07T07:23:36+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://omniartiste.org/about</loc>
-  <lastmod>2024-09-06T03:35:42+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://omniartiste.org/about</loc>
+<lastmod>2024-09-07T07:23:36+01:00</lastmod>
+<priority>1.0</priority>
 </url>
+<url>
+<loc>https://omniartiste.org/contact</loc>
+<lastmod>2024-09-07T07:23:36+01:00</lastmod>
+<priority>1.0</priority>
+</url>
+</urlset>
 
 
 </urlset>
